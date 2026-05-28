@@ -2,67 +2,65 @@
 
 ## Problem Statement
 
-Marketing teams currently answer performance-related questions manually by pulling data from multiple platforms such as Google Ads, Meta Ads, LinkedIn Ads, and email campaign tools.
+Right now, whenever someone asks how marketing campaigns are performing, analysts have to manually collect data from multiple platforms like Google Ads, Meta Ads, LinkedIn Ads, and email tools.
 
-This process is:
+This process takes time and depends heavily on the person preparing the report. Different analysts may calculate or present metrics differently, which creates inconsistency. Sometimes the response is delayed simply because the person who usually handles reporting is busy.
 
-* Time-consuming
-* Inconsistent across analysts
-* Difficult to scale
-* Dependent on individual team members
-
-The goal is to create an internal tool that helps teams quickly understand current marketing performance across channels and identify areas that need attention.
+The goal of this tool is to reduce manual effort and provide a faster, more consistent way to understand marketing performance across channels.
 
 
-# Target Users
+# Who Is This Tool For?
 
 ## Primary Users
 
 * Internal marketing analysts
 * Marketing managers
 
+These users need quick visibility into campaign performance without manually checking multiple tools every time.
+
 ## Secondary Users
 
 * Client stakeholders
-* Campaign managers
+* Campaign owners
 
 
-# Product Goal
+# Main Goal of the Tool
 
-Provide a centralized and consistent view of marketing performance across channels while reducing manual reporting effort.
+The tool should help users answer questions like:
 
-The tool should help users answer:
-
-* Which channels are performing best?
+* Which marketing channels are performing well?
 * Which campaigns are underperforming?
-* Where should marketing teams focus next?
+* Where should the team focus next?
+* How are campaigns performing compared to previous weeks?
+
+The focus is not to replace existing tools, but to bring important information into one place.
 
 
 # Proposed Solution
 
-A centralized dashboard that aggregates campaign performance data from multiple marketing platforms and presents simplified insights.
+I propose a centralized dashboard that pulls campaign data from different marketing platforms and displays a simplified performance overview.
 
-The tool will:
+The dashboard should:
 
-* Pull marketing data from existing platforms
-* Standardize key metrics
-* Display performance summaries
-* Highlight top and underperforming campaigns
-* Reduce dependency on manual analysis
+* Collect data from existing marketing tools
+* Standardize important metrics
+* Show performance summaries
+* Highlight important trends or issues
+* Reduce dependency on manual reporting
 
 
-# Core Features (V1 Scope)
+# Features Included in V1
 
 ## 1. Cross-Channel Performance Overview
 
-Display metrics from:
+The dashboard will display performance metrics from:
 
 * Google Ads
 * Meta Ads
 * LinkedIn Ads
 * Email campaigns
 
-Metrics include:
+Metrics shown:
 
 * Spend
 * Impressions
@@ -74,7 +72,7 @@ Metrics include:
 
 ## 2. Campaign Performance Table
 
-A sortable table showing:
+A simple table showing:
 
 * Campaign name
 * Channel
@@ -83,16 +81,20 @@ A sortable table showing:
 * ROAS
 * Conversion rate
 
-
-## 3. Performance Insights
-
-Simple rule-based insights such as:
-
-* “Facebook campaigns generated the highest ROAS this week.”
-* “Email campaign CTR decreased by 12% compared to last week.”
+This helps users quickly identify high and low performing campaigns.
 
 
-## 4. Time Filters
+## 3. Basic Performance Insights
+
+The tool can generate simple insights such as:
+
+* “Meta campaigns generated the highest ROAS this week.”
+* “Email CTR decreased compared to last week.”
+
+At this stage, rule-based insights are enough instead of introducing complex AI recommendations.
+
+
+## 4. Date Filters
 
 Users can filter data by:
 
@@ -103,77 +105,75 @@ Users can filter data by:
 
 # Data Sources
 
-The system will integrate with:
+Possible data sources:
 
 * Google Ads API
 * Meta Ads API
 * LinkedIn Ads API
 * Email marketing platforms
-* Existing CSV exports if APIs are unavailable
+* CSV exports if direct API access is unavailable
+
+Since the company does not want to change its current workflow, the tool should integrate with existing platforms instead of replacing them.
 
 
 # User Flow
 
-1. User opens dashboard
-2. Tool fetches latest marketing data
-3. Metrics are standardized and aggregated
-4. Dashboard displays summaries and campaign insights
-5. User identifies high and low performing channels
+1. User opens the dashboard
+2. Latest campaign data is fetched
+3. Data is cleaned and standardized
+4. Dashboard displays metrics and summaries
+5. User reviews campaign performance and identifies focus areas
 
 
-# Architecture Overview
+# Building Trust With Users
 
-Marketing APIs → Data Ingestion Layer → Data Warehouse → Dashboard UI
+For users to trust the dashboard:
+
+* Metrics should remain consistent
+* Data sources should be clearly visible
+* Last updated timestamps should be shown
+* Calculations should be standardized across channels
+
+Trust is important because marketing decisions may be based on the dashboard.
 
 
-# What Builds User Trust
-
-Users need confidence in the data being shown.
-
-To improve trust:
-
-* Show last updated timestamp
-* Clearly label data sources
-* Maintain consistent metric definitions
-* Use standardized calculations across channels
-
-# Out of Scope for V1
+# What Is Not Included in V1
 
 The following features are intentionally excluded from the first version:
 
-* Real-time analytics
+* Real-time streaming analytics
 * AI chatbot assistant
 * Predictive forecasting
 * Automated budget allocation
-* Cross-channel attribution modeling
-* Custom report builders
+* Complex attribution modeling
+* Fully customizable reporting
 
-These features increase complexity and require deeper validation before implementation.
+These features would increase complexity and require more validation before implementation.
 
 
-# Success Metrics
+# Success Criteria
 
-The product will be considered successful if:
+The tool will be successful if:
 
 * Analysts spend less time preparing reports
-* Stakeholders receive faster answers
-* Reporting becomes more standardized
-* Teams rely less on manual workflows
+* Teams get faster answers
+* Reporting becomes more consistent
+* Marketing performance is easier to understand
 
 
 # Future Improvements
 
-Potential future enhancements:
+Possible future improvements:
 
 * AI-generated recommendations
 * Automated anomaly detection
 * Slack or email alerts
-* Forecasting and trend prediction
+* Forecasting trends
 * Client-facing dashboard access
 
 
 # Conclusion
 
-The proposed tool focuses on solving a clear operational problem with a simple and practical first version.
+This solution focuses on solving a practical problem with a simple first version.
 
-Rather than replacing existing workflows, it integrates with current tools and improves efficiency, consistency, and visibility across marketing performance reporting.
+Instead of building a large and complicated system immediately, the idea is to create a reliable internal tool that improves reporting speed, consistency, and visibility while fitting into the team’s current workflow.
