@@ -1,13 +1,26 @@
 from fetch_data import fetch_crypto_data
 from transform import transform_data
+from load_bigquery import load_to_bigquery
 
-data = fetch_crypto_data()
+def main():
 
-if data:
-    df = transform_data(data)
+    data = fetch_crypto_data()
 
-    print(df.head())
-    print("Pipeline executed successfully.")
+    if data:
 
-else:
-    print("Failed to fetch data.")
+        df = transform_data(data)
+
+        print(df.head())
+
+        # Uncomment when running locally with BigQuery credentials configured
+        # load_to_bigquery(df)
+
+        print("Pipeline executed successfully.")
+
+    else:
+
+        print("Failed to fetch data.")
+
+
+if __name__ == "__main__":
+    main()
