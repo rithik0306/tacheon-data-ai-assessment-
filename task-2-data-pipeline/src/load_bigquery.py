@@ -4,7 +4,7 @@ def load_to_bigquery(df):
 
     client = bigquery.Client()
 
-    table_id = "YOUR_PROJECT_ID.crypto_data.crypto_market_data"
+    table_id = "crypto-market-pipeline-497808.crypto_data.crypto_market_data"
 
     job = client.load_table_from_dataframe(
         df,
