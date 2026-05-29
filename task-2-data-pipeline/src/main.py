@@ -18,7 +18,6 @@ def main():
         print("Pipeline executed successfully.")
 
     else:
-
         print("Failed to fetch data.")
 
 
