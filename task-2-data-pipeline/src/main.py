@@ -20,6 +20,5 @@ def main():
     else:
         print("Failed to fetch data.")
 
-
 if __name__ == "__main__":
     main()
